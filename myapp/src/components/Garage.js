@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Car from "./Car";
 
 class Garage extends Component {
   render() {
@@ -6,15 +7,7 @@ class Garage extends Component {
     return (
       <div>
         {
-          (this.props.cars.map(_car => (
-            <div key={_car.id}>
-              <p>Brand: {_car.brand}</p>
-              <p>Model: {_car.model}</p>
-              <p>Year: {_car.year}</p>
-              <p style={{color: _car.color}}>Color: {_car.color}</p>
-              <hr />
-            </div>
-          )))
+          this.props.cars.map(_car => <Car car={_car} key={_car.id}/>)
         }
       </div>
     );
