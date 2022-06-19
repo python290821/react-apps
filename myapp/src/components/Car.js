@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 
 class Car extends Component {
     render() {
-        //const brand = this.props.brand
-        //const model = this.props.model
-        //const color = this.props.color
+        //const brand = this.props.car.brand
+        //const model = this.props.car.model
+        //const color = this.props.car.color
+        //const id = this.props.car.id
         const {brand, model, color, year, id} = this.props.car
         return (
             <div key={id}>
