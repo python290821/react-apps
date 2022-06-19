@@ -13,6 +13,7 @@ class Car extends Component {
               <p>Model: {model}</p>
               <p>Year: {year}</p>
               <p style={{color}}>Color: {color}</p>
+              <button style={{color: 'red'}}>X</button>
               <hr />
             </div>)
     }
