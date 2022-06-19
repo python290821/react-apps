@@ -6,7 +6,7 @@ class Garage extends Component {
     return (
       <div>
         {
-          (this.props.cars.map((_car) => (
+          (this.props.cars.map(_car => (
             <div key={_car.id}>
               <p>Brand: {_car.brand}</p>
               <p>Model: {_car.model}</p>
