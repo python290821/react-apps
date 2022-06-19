@@ -7,9 +7,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hello React!</h1>
-        <Car />
-        <Car />
-        <Car />
+        <Car brand="Honda" model="civic" color="blue"/>
+        <Car brand="Ferrari" model="Testa Rossa" color="red"/>
+        <Car brand="Chevrolet" model="cavalier" color="green"/>
       </div>
     );
   }
