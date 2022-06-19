@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Car from "./Car";
+import Car from "./components/Car";
 import "./App.css";
 
 class App extends Component {
