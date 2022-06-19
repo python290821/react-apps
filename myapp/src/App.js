@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Car from "./components/Car";
 import "./App.css";
 import Garage from "./components/Garage";
 
@@ -13,11 +12,18 @@ class App extends Component {
     ],
   };
 
+  deleteCar = _id => {
+      const new_cars = this.state.my_cars.filter(car => car.id !== _id)
+      this.setState({
+          my_cars: new_cars
+      })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Hello React!</h1>
-        <Garage cars={this.state.my_cars} />
+        <Garage cars={this.state.my_cars} delete_car = {this.deleteCar} />
       </div>
     );
   }
