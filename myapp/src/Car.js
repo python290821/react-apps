@@ -8,6 +8,7 @@ class Car extends Component {
             <p>Brand: Honda</p>
             <p>Model: Civic</p>
             <p>Color: black</p>
+            <hr />
         </div>)
     }
 }
