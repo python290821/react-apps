@@ -1,12 +1,19 @@
-import logo from './logo.svg';
+
+import React, { Component } from 'react';
+import Car from './Car';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-        Hello React!
-    </div>
-  );
+class App extends Component {
+    render() {
+        return (
+            <div className="App">
+                <h1>Hello React!</h1>
+                <Car /><hr />
+                <Car /><hr />
+                <Car />
+            </div>
+        );
+  }
 }
 
 export default App;
