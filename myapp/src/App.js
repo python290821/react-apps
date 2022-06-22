@@ -18,12 +18,22 @@ class App extends Component {
           my_cars: new_cars
       })
   }
+  addCar = _car => {
+    // add the car to state { my_cars }
+  }
 
   render() {
     return (
       <div className="App">
         <h1>Hello React!</h1>
         <Garage cars={this.state.my_cars} delete_car = {this.deleteCar} />
+        {/*  AddCar add_car = {this.addCar}
+            -- form: 
+            no bonus: input type text
+            brand,model, year (*calendar), color (*drop-down), *electric(check-box)
+            submit button --> add_car
+            *bonus: clear text-input after submit
+     */}
       </div>
     );
   }
