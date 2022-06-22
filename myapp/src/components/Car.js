@@ -12,7 +12,7 @@ class Car extends Component {
         border: '2px solid ' + color , margin: '35px 50px' }
         return (
             <div key={id} style={css1}>
-              <p>Brand: <input type="text" value={brand} /></p>
+              <p>Brand: {brand} </p>
               <p>Model: {model}</p>
               <p>Year: {year}</p>
               <p style={{color}}>Color: {color}</p>

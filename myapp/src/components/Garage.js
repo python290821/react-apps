@@ -7,7 +7,17 @@ class Garage extends Component {
     return (
       <div>
         {
-          this.props.cars.map(_car => <Car car={_car} key={_car.id} delete_car = {this.props.delete_car}/>)
+            
+          this.props.cars.filter(_car => _car.year > 2020).
+              map(_car => <Car car={_car} key={_car.id} delete_car = {this.props.delete_car} />)
+          //this.props.cars.map((_car) => {
+          //if (_car.year > 2020)
+            //return (
+            // <Car car={_car} key={_car.id} delete_car={this.props.delete_car}></Car>
+            //);
+          //return null;
+
+          //_car.year > 2020 ? (<Car car={_car} key={_car.id} delete_car = {this.props.delete_car} />) : null
         }
       </div>
     );
