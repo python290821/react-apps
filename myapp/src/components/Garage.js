@@ -7,7 +7,8 @@ class Garage extends Component {
     return (
       <div>
         {
-            
+            // ex-1: this 2020 will come from a text-box input
+
           this.props.cars.filter(_car => _car.year > 2020).
               map(_car => <Car car={_car} key={_car.id} delete_car = {this.props.delete_car} />)
           //this.props.cars.map((_car) => {

@@ -25,6 +25,13 @@ class App extends Component {
     })
   }
 
+  // ex-2
+  updateCar = _car => {
+    //this.setState({
+        //my_cars: [{..._car, id: App.my_car_seq++}, ...this.state.my_cars]
+    //})
+  }
+
   render() {
     return (
       <div className="App">
