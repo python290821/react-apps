@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Garage from "./components/Garage";
+import AddCar from "./components/AddCar";
 
 class App extends Component {
   static my_car_seq = 4
@@ -19,14 +20,18 @@ class App extends Component {
       })
   }
   addCar = _car => {
-    // add the car to state { my_cars }
+    this.setState({
+        my_cars: [{..._car, id: App.my_car_seq++}, ...this.state.my_cars]
+    })
   }
 
   render() {
     return (
       <div className="App">
         <h1>Hello React!</h1>
+        <AddCar add_car={this.addCar} />
         <Garage cars={this.state.my_cars} delete_car = {this.deleteCar} />
+
         {/*  AddCar add_car = {this.addCar}
             -- form: 
             no bonus: input type text
