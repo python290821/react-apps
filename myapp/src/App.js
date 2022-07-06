@@ -4,27 +4,13 @@ import Garage from "./components/Garage";
 import AddCar from "./components/AddCar";
 import FilterCar from "./components/FilterCar";
 
+import { connect } from 'react-redux';
+
+
 class App extends Component {
-  static my_car_seq = 4;
+
   state = {
-    my_cars: [
-      { brand: "Honda", model: "civic", color: "blue", year: 2018, id: 1 },
-      {
-        brand: "Ferrari",
-        model: "Testa Rossa",
-        color: "red",
-        year: 2020,
-        id: 2,
-      },
-      {
-        brand: "Chevrolet",
-        model: "cavalier",
-        color: "green",
-        year: 2022,
-        id: 3,
-      },
-    ],
-    year_filter: new Date().getFullYear() - 10,
+    year_filter: new Date().getFullYear() - 10
   };
 
   deleteCar = (_id) => {
@@ -34,9 +20,10 @@ class App extends Component {
     });
   };
   addCar = (_car) => {
-    this.setState({
-      my_cars: [{ ..._car, id: App.my_car_seq++ }, ...this.state.my_cars],
-    });
+    // this.setState({
+    //   my_cars: [{ ..._car, id: App.my_car_seq++ }, ...this.state.my_cars],
+    // });
+    this.props.add_car(_car)
   };
 
   updateCar = (_car) => {
@@ -85,7 +72,7 @@ class App extends Component {
           set_year_filter={this.setYearFilter}
         />
         <Garage
-          cars={this.state.my_cars}
+          cars={this.props.my_cars}
           year_filter={this.state.year_filter}
           update_car={this.updateCar}
           delete_car={this.deleteCar}
@@ -104,4 +91,24 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (store_state, current_props) => {
+  console.log('============')
+  console.log(current_props);
+  console.log('============')
+  console.log('==== mapper state')
+  console.log(store_state.my_cars)
+  // returns the new props
+  return {
+    ...current_props,
+    my_cars: store_state.my_cars
+  } 
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    add_car: new_car => dispatch( {type:'add_car', new_car } )
+  } 
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
